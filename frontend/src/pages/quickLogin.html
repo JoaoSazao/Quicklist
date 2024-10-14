@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quicklist | Login</title>
+  <link rel="stylesheet" href="/frontend/src/styles/quickLogin.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <link rel="shortcut icon" href="/frontend/src/components/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <header>
+    <section class="flex flex-col justify-center items-center mt-28 gap-6">
+      <img class="pointer-events-none select-none" src="/frontend/src/components/logo.png" alt="Logo da Quicklist">
+      <h1 id="principal-text">Realize o login ou cadastre-se em nosso gerenciador de compras!</h1>
+    </section>
+  </header>
+
+  <main class="flex flex-col justify-center items-center">
+    <form action="">
+    <section class="flex flex-col mt-14 gap-8">
+      <div>
+        <h5 id="text-input">Insira seu e-mail</h5>
+        <input id="input-login" type="email" placeholder="Digite aqui seu e-mail">
+      </div>
+      <div>
+        <h5 id="text-input">Insira sua senha</h5>
+        <input id="input-login" type="password" placeholder="Digite aqui sua senha">
+      </div>
+      <a id="forgot-pass" class="text-end" href="#">Esqueceu sua senha?</a>
+    </section>
+    <section class="mt-12 flex flex-col gap-4">
+      <button id="btn-login" type="submit">Fazer Login</button>
+      <button id="btn-register">Cadastro</button>
+    </section>
+    </form>
+  </main>
+
+</body>
+
+</html>

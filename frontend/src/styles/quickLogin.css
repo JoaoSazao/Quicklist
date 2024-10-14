@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --primary-color: #CA3884;
+  --black-color: #080B12;
+  --gray-color: #9CA3AF;
+  --font: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font);
+}
+
+#principal-text {
+  color: var(--black-color);
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 1rem;
+  user-select: none;
+}
+
+#text-input {
+  color: var(--black-color);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+#input-login {
+  width: 30rem;
+  border-radius: 12px;
+  border: solid 2px var(--gray-color);
+  outline: none;
+  /* Remove o contorno padrão */
+  transition: all ease .3s;
+}
+
+#input-login:focus {
+  outline: none;
+  /* Garante que o contorno não apareça ao focar */
+  border: solid 2px var(--primary-color);
+  /* Muda a borda ao focar */
+}
+
+#forgot-pass {
+  color: var(--primary-color);
+  transition: all ease .3s;
+}
+
+#forgot-pass:hover {
+  color: #A52C6B;
+}
+
+#btn-login {
+  border: 1px solid var(--primary-color);
+  padding: .75rem;
+  border-radius: 12px;
+  color: white;
+  background-color: var(--primary-color);
+  font-size: 14px;
+  font-weight: bold;
+  transition: all ease .3s;
+}
+
+#btn-login:hover {
+  background-color: #A52C6B;
+  transform: scale(1.1);
+}
+
+#btn-register {
+  border: 1px solid var(--primary-color);
+  padding: .75rem;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-color);
+  transition: all ease .3s;
+}
+
+#btn-register:hover {
+  transform: scale(1.1);
+}

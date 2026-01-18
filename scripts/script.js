@@ -5,6 +5,8 @@ const listItems = document.getElementById('list-items');
 const btnBack = document.getElementById('btn-back');
 const notification = document.getElementById('notification');
 const notificationClose = document.getElementById('notification-close');
+const notificationSuccess = document.getElementById('notification-success');
+const notificationSuccessClose = document.getElementById('notification-success-close');
 
 // Contador para IDs únicos
 let itemCount = 0;
@@ -38,6 +40,7 @@ function createItemElement(itemText) {
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
       li.classList.add('completed');
+      showSuccessNotification();
     } else {
       li.classList.remove('completed');
     }
@@ -83,11 +86,11 @@ function removeItem(item) {
   // Remove o item da lista
   item.remove();
   
-  // Mostra a notificação
+  // Mostra a notificação de remoção
   showNotification();
 }
 
-// Função para mostrar a notificação
+// Função para mostrar a notificação de remoção
 function showNotification() {
   notification.classList.add('show');
   
@@ -97,9 +100,24 @@ function showNotification() {
   }, 3000);
 }
 
-// Função para esconder a notificação
+// Função para esconder a notificação de remoção
 function hideNotification() {
   notification.classList.remove('show');
+}
+
+// Função para mostrar a notificação de sucesso
+function showSuccessNotification() {
+  notificationSuccess.classList.add('show');
+  
+  // Esconde a notificação após 3 segundos
+  setTimeout(() => {
+    hideSuccessNotification();
+  }, 3000);
+}
+
+// Função para esconder a notificação de sucesso
+function hideSuccessNotification() {
+  notificationSuccess.classList.remove('show');
 }
 
 // Função para recarregar a página
@@ -116,3 +134,4 @@ document.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', addItem);
 btnBack.addEventListener('click', reloadPage);
 notificationClose.addEventListener('click', hideNotification);
+notificationSuccessClose.addEventListener('click', hideSuccessNotification);

@@ -28,9 +28,48 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-
     <!-- Logo -->
-    <img src="" alt="">
+    <div class="flex justify-center logo-container">
+      <img id="logo-hidden" src="/assets/logo.png" alt="Logotipo" />
+    </div>
 
+    <header>
+      <div class="title-container">
+        <button class="flex items-center gap-1 btn-back" id="btn-back">
+          <i class="bx bx-arrow-left"></i>
+          <span>Voltar</span>
+        </button>
+        <h2>Compras da semana</h2>
+      </div>
+
+      <form id="form-add-item">
+        <div class="flex items-center justify-center gap-4">
+          <input
+            class="input-item"
+            type="text"
+            placeholder="Adicione um novo item"
+            id="input-item"
+          />
+          <button type="submit" class="btn-submit">Adicionar item</button>
+        </div>
+
+        <ul class="list-items" id="list-items">
+          <!-- Os itens serão adicionados aqui via JavaScript -->
+        </ul>
+      </form>
+    </header>
+
+    <!-- Notificação de remoção -->
+    <div class="notification" id="notification">
+      <div class="notification-content">
+        <i class="bx bx-info-circle"></i>
+        <p>O item foi removido da lista</p>
+      </div>
+      <button class="notification-close" id="notification-close">
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
+
+    <script src="/scripts/script.js"></script>
   </body>
 </html>

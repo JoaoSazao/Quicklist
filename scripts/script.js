@@ -9,17 +9,8 @@ const notificationClose = document.getElementById('notification-close');
 // Contador para IDs únicos
 let itemCount = 0;
 
-// Função para adicionar novo item
-function addItem(e) {
-  e.preventDefault();
-  
-  const itemText = input.value.trim();
-  
-  // Verifica se o input não está vazio
-  if (itemText === '') {
-    return;
-  }
-  
+// Função para criar um item
+function createItemElement(itemText) {
   // Incrementa o contador
   itemCount++;
   
@@ -38,15 +29,53 @@ function addItem(e) {
     </button>
   `;
   
-  // Adiciona o item à lista
+  // Adiciona evento de clique no botão de deletar
+  const btnDelete = li.querySelector('.btn-delete');
+  btnDelete.addEventListener('click', () => removeItem(li));
+  
+  // Adiciona evento de mudança no checkbox
+  const checkbox = li.querySelector('input[type="checkbox"]');
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      li.classList.add('completed');
+    } else {
+      li.classList.remove('completed');
+    }
+  });
+  
+  return li;
+}
+
+// Função para adicionar itens padrão
+function addDefaultItems() {
+  const defaultItems = ['Pão de forma', 'Café preto'];
+  
+  defaultItems.forEach(item => {
+    const li = createItemElement(item);
+    listItems.appendChild(li);
+  });
+}
+
+// Função para adicionar novo item
+function addItem(e) {
+  e.preventDefault();
+  
+  const itemText = input.value.trim();
+  
+  // Verifica se o input não está vazio
+  if (itemText === '') {
+    return;
+  }
+  
+  // Cria e adiciona o item
+  const li = createItemElement(itemText);
   listItems.appendChild(li);
   
   // Limpa o input
   input.value = '';
   
-  // Adiciona evento de clique no botão de deletar
-  const btnDelete = li.querySelector('.btn-delete');
-  btnDelete.addEventListener('click', () => removeItem(li));
+  // Foca no input novamente
+  input.focus();
 }
 
 // Função para remover item
@@ -77,6 +106,11 @@ function hideNotification() {
 function reloadPage() {
   location.reload();
 }
+
+// Inicialização - Adiciona itens padrão quando a página carregar
+document.addEventListener('DOMContentLoaded', () => {
+  addDefaultItems();
+});
 
 // Event Listeners
 form.addEventListener('submit', addItem);

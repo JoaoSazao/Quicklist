@@ -53,6 +53,8 @@ h2 {
 .logo-container {
     margin-bottom: 3.875rem;
     padding-top: 2rem;
+    pointer-events: none;
+    user-select: none;
 }
 
 /* ========== HEADER E TÍTULO ========== */
@@ -152,7 +154,12 @@ h2 {
     background-color: var(--background-secondary);
     font: var(--paragraph);
     color: var(--content-secondary);
-    transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.list-items li.completed {
+    border: 2px solid var(--color-brand);
 }
 
 .list-items li:hover {
@@ -162,6 +169,12 @@ h2 {
 .list-items li label {
     cursor: pointer;
     user-select: none;
+    transition: text-decoration 0.2s ease, color 0.2s ease;
+}
+
+.list-items li.completed label {
+    text-decoration: line-through;
+    color: var(--content-tertiary);
 }
 
 /* ========== CHECKBOX ========== */
@@ -271,9 +284,9 @@ input[type="checkbox"] {
     header {
         margin-top: 5rem;
     }
-
+    
     .logo-container {
-        display: none; /* Esconde a logo em tablets e celulares */
+        display: none;
     }
     
     .input-item {

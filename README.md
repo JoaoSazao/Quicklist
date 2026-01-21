@@ -20,12 +20,6 @@ Quicklist é uma aplicação de lista de tarefas simples e elegante, desenvolvid
 - ✅ **Design responsivo** - Funciona perfeitamente em desktop, tablet e mobile
 - ✅ **Itens padrão** - Lista vem com 2 itens de exemplo pré-carregados
 
-## 🚀 Demonstração
-
-### Desktop
-![Desktop Preview](https://quicklist-xi.vercel.app/)
-
-
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5** - Estrutura semântica
@@ -71,7 +65,7 @@ quicklist/
 
 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/quicklist.git
+git clone https://github.com/JoaoSazao/quicklist.git
 ```
 
 2. Navegue até a pasta do projeto
